@@ -37,7 +37,22 @@ class ModelTrainer:
                 
             }
 
-            model_report:dict = evaluate_models(X_train=X_train, y_train=y_train,X_test=X_test,y_test=y_test,models=models)
+            params={
+                "Decision Tree": {
+                    'criterion':['squared_error', 'absolute_error'],
+                    # 'splitter':['best','random'],
+                    # 'max_features':['sqrt','log2'],
+                },
+                "Random Forest":{},
+               
+                "Linear Regression":{},
+                "XGBRegressor":{
+                    'learning_rate':[.01,.001],
+                    'n_estimators': [8,16]
+                }
+            }
+
+            model_report:dict = evaluate_models(X_train=X_train, y_train=y_train,X_test=X_test,y_test=y_test,models=models,param=params)
 
             best_model_score = max(sorted(model_report.values()))
 
