@@ -1,0 +1,73 @@
+<html>
+  <body>
+    <div class="login">
+      <h1>Product Purchase Prediction</h1>
+      <form action="{{ url_for('predict_datapoint')}}" method="post">
+        <h1>
+          <legend>Product Purchase Prediction Form</legend>
+        </h1>
+        <div class="mb-3">
+          <label class="form-label">Gender</label>
+          <select class="form-control" name="Gender" placeholder="Enter you Gender" required>
+            <option class="placeholder" selected disabled value="">Select your Gender</option>
+            <option value="M">Male</option>
+            <option value="F">Female</option>
+          </select>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Age</label>
+            <input class="form-control" type="text" name="Age" placeholder="Enter your Age" required />
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Occupation</label>
+          <input class="form-control" type="number" name="Occupation" placeholder="Enter your Occupation" required />
+        </div>
+        <div class="mb-3">
+          <label class="form-label">City Category</label>
+          <select class="form-control" name="City_Category" placeholder="Enter your City Category" required>
+            <option class="placeholder" selected disabled value="">Select City Category</option>
+            <option value="A">A</option>
+            <option value="B">B</option>
+            <option value="C">C</option>
+          </select>
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Stay in Current City Years</label>
+          <select class="form-control" name="Stay_In_Current_City_Years" placeholder="Enter your Stay in Current City Years" required>
+            <option class="placeholder" selected disabled value="">Select Stay in Current City Years</option>
+            <option value="0">0</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4+">4+</option>
+          </select>
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Marital Status</label>
+          <select class="form-control" name="Marital_Status" placeholder="Enter your Marital Status" required>
+            <option class="placeholder" selected disabled value="">Select Marital Status</option>
+            <option value="0">0</option>
+            <option value="1">1</option>
+        </select>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Product Category 1</label>
+            <input class="form-control" type="number" name="Product_Category_1" placeholder="Enter Product category 1" required />
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Product Category 2</label>
+            <input class="form-control" type="number" name="Product_Category_2" placeholder="Enter Product category 1" required />
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Product Category 3</label>
+            <input class="form-control" type="number" name="Product_Category_3" placeholder="Enter Product category 1" required />
+        </div>
+        <div class="mb-3">
+            <input class="btn btn-primary" type="submit" value="Predict the sales" required />
+        </div>
+    </form>
+    <h2>
+       THE  prediction is {{results}}
+    </h2>
+   <body>
+</html>
